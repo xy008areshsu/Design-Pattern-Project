@@ -33,8 +33,8 @@ public:
 	virtual std::string get_stuff() const = 0;
 
 	//http://stackoverflow.com/questions/8114276/how-do-i-pass-a-unique-ptr-argument-to-a-constructor-or-a-function
-	void set_fly_strategy(std::unique_ptr<FlyStrategy>& fly_type) {_fly_type = std::move(fly_type);}
-	void set_fly_strategy(std::unique_ptr<FlyStrategy>&& fly_type) {_fly_type = std::move(fly_type);}
+	void set_fly_strategy(std::unique_ptr<FlyStrategy> fly_type) {_fly_type = std::move(fly_type);}
+	// void set_fly_strategy(std::unique_ptr<FlyStrategy>&& fly_type) {_fly_type = std::move(fly_type);}
 
 	std::string try_to_fly() const {return _fly_type->fly();}
 
